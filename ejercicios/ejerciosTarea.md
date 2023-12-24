@@ -44,7 +44,11 @@
 
 ### Ejercicio 4: Factorial de un número
 
-**Descripción:** Calcula el factorial de un número ingresado por el usuario. El factorial de un número n (representado como n!) es el producto de todos los enteros positivos menores o iguales a n.
+**Descripción:** Calcula el factorial de un número ingresado por el usuario. El factorial de un número n (representado como $n!$) es el producto de todos los enteros positivos menores o iguales a n.
+
+Ejemplo de factorial de 5:
+
+$5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$
 
 **Ejemplo de Input:**
                     
