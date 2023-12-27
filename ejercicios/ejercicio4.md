@@ -1,4 +1,4 @@
-### Ejercicio 1: Validación de Contraseña
+# Ejercicio 1: Validación de Contraseña
 
 Escribe un programa que verifique si una contraseña cumple con ciertos requisitos:
 
@@ -15,7 +15,7 @@ Escribe un programa que verifique si una contraseña cumple con ciertos requisit
 true
 ```
 
-### Ejercicio 2: Contar Ocurrencias de una Letra
+# Ejercicio 2: Contar Ocurrencias de una Letra
 
 Crea un programa que cuente cuántas veces aparece una letra específica en una cadena.
 
@@ -29,7 +29,7 @@ Crea un programa que cuente cuántas veces aparece una letra específica en una 
 5
 ```
 
-### Ejercicio 3: Concatenar listas
+# Ejercicio 3: Concatenar listas
 
 **Instrucciones:**
 
@@ -61,7 +61,7 @@ Crea un programa que cuente cuántas veces aparece una letra específica en una 
 ["Hola", " ", "Mundo", "!"]
 ```
 
-### Ejercicio 4: Invertir lista
+# Ejercicio 4: Invertir lista
 
 **Instrucciones:**
 
@@ -92,7 +92,7 @@ Crea un programa que cuente cuántas veces aparece una letra específica en una 
 ['C', 'B', 'A']
 ```
 
-### Ejercicio 5: Obtener una sublista
+# Ejercicio 5: Obtener una sublista
 
 **Instrucciones:**
 
@@ -120,19 +120,19 @@ Crea un programa que cuente cuántas veces aparece una letra específica en una 
 ["Caballo", "Conejo", "Ratón"]
 ```
 
-### Ejercicio 6: Word Count
-### Instrucciones para crear un Word Counter
+# Ejercicio 6: Word Count
+## Instrucciones para crear un Word Counter
 
-#### 1. **Entrada de texto:**
+### 1. **Entrada de texto:**
    - Utiliza la clase `Scanner` para obtener la entrada de texto del usuario o de un archivo.
 
-#### 2. **Tokenización:**
+### 2. **Tokenización:**
    - Divide el texto en palabras individuales o tokens.
 
-#### 3. **Recuento de palabras:**
+### 3. **Recuento de palabras:**
    - Crea un `HashMap` o `Map<String, Integer>` para almacenar las palabras y su conteo.
 
-#### 4. **Mostrar resultados:**
+### 4. **Mostrar resultados:**
    - Después de procesar todo el texto, muestra el recuento de palabras.
 
 **Ejemplo de input**
@@ -154,7 +154,7 @@ cuatro: 1
 patas: 1
 ```
 
-### Ejercicio 7: Imprimir la tabla de multiplicación del 1 al 10 usando bucles anidados
+# Ejercicio 7: Imprimir la tabla de multiplicación del 1 al 10 usando bucles anidados
 
 Para crear la tabla de multiplicación del 1 al 10:
 - Utilizar dos bucles 'for' anidados.
@@ -183,7 +183,7 @@ Tabla de multiplicación del 2:
 ...
 ```
 
-### Ejercicio 8: Imprimir un patrón de asteriscos usando bucles anidados
+# Ejercicio 8: Imprimir un patrón de asteriscos usando bucles anidados
 
 Para crear un patrón de asteriscos en forma de triángulo:
 - Definir el número de filas deseadas en el patrón.
