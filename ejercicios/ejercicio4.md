@@ -206,3 +206,50 @@ Para crear un patrón de asteriscos en forma de triángulo:
 * * * *
 * * * * *
 ```
+
+# Ejercicio 9: If Anidado
+
+1. **Objetivo:** Determinar el nivel de descuento según el monto de compra.
+2. **Instrucciones:**
+    - Solicitar al usuario que ingrese el monto de compra.
+    - Usar condicionales (`if`, `else`) para establecer el descuento:
+        - Si el monto es mayor a $1000, aplicar un descuento del 10%.
+        - Si el monto es mayor a $2000, el descuento es del 20%.
+        - En otros casos, no aplicar ningún descuento.
+    - Calcular el monto de descuento y mostrarlo.
+    - Calcular el monto final a pagar y mostrarlo.
+
+**Ejemplo de input**
+```
+1500
+```
+
+**Ejemplo de output**
+```
+Monto de compra: $1500
+Descuento: $150
+Monto final: $1350
+```
+
+# Ejercicio 10: Else If
+
+1. **Objetivo:** Clasificar la temperatura actual según diferentes rangos.
+2. **Instrucciones:**
+    - Solicitar al usuario que ingrese la temperatura actual en grados Celsius.
+    - Utilizar múltiples condiciones (`if`, `elif`, `else`) para determinar el estado del clima según el valor ingresado:
+        - Si la temperatura es menor a 0, mostrar "¡Hace mucho frío!".
+        - Si está entre 0 y 10 grados, mostrar "Hace frío.".
+        - Si está entre 10 y 20 grados, mostrar "El clima es fresco.".
+        - Si está entre 20 y 30 grados, mostrar "El clima es templado.".
+        - Para cualquier valor fuera de estos rangos, mostrar "Hace calor.".
+    - Mostrar el mensaje correspondiente al estado del clima según la temperatura ingresada.
+
+**Ejemplo de input**
+```
+15
+```
+
+**Ejemplo de output**
+```
+El clima es templado.
+```
