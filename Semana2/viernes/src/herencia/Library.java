@@ -1,7 +1,6 @@
 package herencia;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Library {
     String name;
@@ -21,7 +20,7 @@ public class Library {
     // eliminar usuario
     // buscar item
 
-    public boolean prestamoLibro(int item_id, int user_id)
+    public boolean prestamo(int item_id, int user_id)
     {
         // buscar usuario
         Usuario userFound = new Usuario();
@@ -70,9 +69,11 @@ public class Library {
         {
             System.out.println("Prestamo realizado con exito");
             userFound.addItem(libraryItem);
+            libraryItem.setDisponible(false);
             return true;
         }
         else{
+            System.out.println("Item no disponible");
             return false;
         }
     }
