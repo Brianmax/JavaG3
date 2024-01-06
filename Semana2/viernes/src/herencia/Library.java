@@ -18,9 +18,22 @@ public class Library {
     public boolean prestamoLibro(int item_id, int user_id)
     {
         // buscar usuario
-        for(Usuario user: users)
-        {
-
+        Usuario userList = new Usuario();
+        boolean isUserPresent = false;
+        for(Usuario user: users){
+            if(user.getId() == user_id)
+            {
+                isUserPresent = true;
+                userList = user;
+                break;
+            }
         }
+        if(isUserPresent==false)
+        {
+            System.out.println("El usuario no existe");
+            return false;
+        }
+
+
     }
 }
