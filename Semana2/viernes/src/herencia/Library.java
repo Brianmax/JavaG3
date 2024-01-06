@@ -8,6 +8,12 @@ public class Library {
     ArrayList<LibraryItem> libraryItems;
     ArrayList<Usuario> users;
 
+    public Library(String name, ArrayList<LibraryItem> libraryItems, ArrayList<Usuario> users) {
+        this.name = name;
+        this.libraryItems = libraryItems;
+        this.users = users;
+    }
+
     // metodos
     // prestar
     // devolver
