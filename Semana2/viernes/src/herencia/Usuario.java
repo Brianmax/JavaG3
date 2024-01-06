@@ -39,4 +39,9 @@ public class Usuario {
     public void setItems(ArrayList<LibraryItem> items) {
         this.items = items;
     }
+
+    public void addItem(LibraryItem libraryItem)
+    {
+        this.items.add(libraryItem);
+    }
 }

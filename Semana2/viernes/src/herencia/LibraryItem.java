@@ -12,6 +12,9 @@ public class LibraryItem {
         this.disponible = disponible;
     }
 
+    public LibraryItem() {
+    }
+
     public int getId() {
         return id;
     }
@@ -35,4 +38,5 @@ public class LibraryItem {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
+
 }
