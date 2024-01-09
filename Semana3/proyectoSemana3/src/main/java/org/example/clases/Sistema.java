@@ -11,11 +11,11 @@ public class Sistema {
     List<EstudianteProfesor> estudianteProfesors = new ArrayList<>();
     List<Curso> cursos = new ArrayList<>();
 
-    void agregarCurso(Curso curso)
+    public void agregarCurso(Curso curso)
     {
         cursos.add(curso);
     }
-    void agregarUsuario(Usuario usuario)
+    public void agregarUsuario(Usuario usuario)
     {
         if(usuario.getClass().getSimpleName().equals("SoloEstudiante"))
         {
@@ -25,7 +25,7 @@ public class Sistema {
             estudianteProfesors.add((EstudianteProfesor) usuario);
         }
     }
-    void asignarProfesor(int id_profesor, String codigo_curso)
+    public void asignarProfesor(int id_profesor, String codigo_curso)
     {
         Curso cursoInstancia = new Curso();
         for(Curso curso: cursos )
@@ -42,6 +42,21 @@ public class Sistema {
             {
                 // asignamos el curso al profesor
                 profesor.agregarCursoImpartido(cursoInstancia);
+            }
+        }
+    }
+    public void printCurso(String codigo)
+    {
+        Curso curso = findCurso(codigo);
+    }
+
+    public Curso findCurso(String codigo)
+    {
+        for(Curso curso: cursos)
+        {
+            if(curso.getCodigo().equals(codigo))
+            {
+                return curso;
             }
         }
     }

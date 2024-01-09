@@ -10,6 +10,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class EstudianteProfesor extends Persona implements Profesor, Estudiante {
     List<Curso> cursosInscritos = new ArrayList<>();
     List<Curso> cursosImpartidos = new ArrayList<>();
+
+    public EstudianteProfesor(int id, String nombre) {
+        super(id, nombre);
+    }
+
     @Override
     public void matricularCurso() {
 
