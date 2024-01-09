@@ -96,3 +96,64 @@ En la clase `Main`, se deberá:
 - Asegurarse de que las clases hereden correctamente los métodos de las interfaces implementadas.
 
 ---
+
+# Ejercicio: Gestión de Usuarios en un Sistema Educativo
+
+## Descripción
+
+El objetivo de este ejercicio es crear un sistema para gestionar diferentes tipos de usuarios en un entorno educativo, como profesores, estudiantes y un bot para la plataforma web.
+
+## Interfaces y Clases
+
+### `Usuario` (Interfaz)
+- **Descripción**: Define comportamientos comunes a los usuarios.
+- **Métodos**:
+    - `iniciarSesion()`: Inicia la sesión del usuario.
+    - `cerrarSesion()`: Cierra la sesión del usuario.
+    - `realizarAcciones()`: Realiza acciones específicas según el tipo de usuario.
+
+### `Persona` (Clase Abstracta)
+- **Descripción**: Clase abstracta que implementa la interfaz `Usuario`. Tiene subclases `Profesor` y `Estudiante`.
+- **Atributos**:
+    - `nombre`: Nombre de la persona.
+    - `edad`: Edad de la persona.
+- **Métodos**:
+    - `iniciarSesion()`: Implementación para iniciar sesión.
+    - `cerrarSesion()`: Implementación para cerrar sesión.
+    - `realizarAcciones()`: Método abstracto que cada subclase debe implementar con acciones específicas.
+
+### `Profesor` (Subclase de `Persona`)
+- **Descripción**: Representa a un profesor.
+- **Atributos**:
+    - `materia`: Materia que enseña el profesor.
+- **Métodos**:
+    - `realizarAcciones()`: Implementación específica para la acción de enseñar.
+
+### `Estudiante` (Subclase de `Persona`)
+- **Descripción**: Representa a un estudiante.
+- **Atributos**:
+    - `grado`: Grado en el que se encuentra el estudiante.
+- **Métodos**:
+    - `realizarAcciones()`: Implementación específica para la acción de estudiar.
+
+### `Bot` (Clase)
+- **Descripción**: Clase que implementa la interfaz `Usuario` y representa un bot para la plataforma web.
+- **Atributos**:
+    - `nombreBot`: Nombre del bot.
+- **Métodos**:
+    - `iniciarSesion()`: Implementación para iniciar sesión del bot.
+    - `cerrarSesion()`: Implementación para cerrar sesión del bot.
+    - `realizarAcciones()`: Implementación para acciones específicas del bot en la plataforma web.
+
+## Funcionalidad Principal
+
+En la clase `Main`, se deberá:
+
+- Crear instancias de profesores, estudiantes y un bot.
+- Probar los métodos `iniciarSesion()`, `cerrarSesion()` y `realizarAcciones()` en cada instancia creada.
+
+## Instrucciones Adicionales
+
+- Utilizar la clase abstracta `Persona` para implementar la funcionalidad común de los usuarios.
+- Cada subclase debe implementar su propio comportamiento en el método `realizarAcciones()`.
+- Verificar que los métodos de inicio y cierre de sesión funcionen correctamente para todos los tipos de usuarios.
