@@ -154,6 +154,7 @@ En la clase `Main`, se deberá:
 
 ## Instrucciones Adicionales
 
-- Utilizar la clase abstracta `Persona` para implementar la funcionalidad común de los usuarios.
+- Utilizar la clase abstracta `Persona` para implementar la interfaz `Usuario` y definir comportamientos comunes.
 - Cada subclase debe implementar su propio comportamiento en el método `realizarAcciones()`.
 - Verificar que los métodos de inicio y cierre de sesión funcionen correctamente para todos los tipos de usuarios.
+- La clase `Bot` debe implementar la interfaz `Usuario` y definir su propio comportamiento para las acciones en la plataforma web, pero no debe heredar de `Persona`.
