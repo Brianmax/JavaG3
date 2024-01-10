@@ -1,4 +1,4 @@
-# Ejercicio 1: Clase Genérica
+# Ejercicio 1:
 1. **Objetivo:**
    - Crear una clase genérica llamada `OperacionMatematica` que permita realizar operaciones matemáticas básicas (suma y resta) con números.
 
@@ -12,7 +12,7 @@
    - Imprimir los resultados de las operaciones realizadas.
 
 
-# Ejercicio 2: Par de Objetos
+# Ejercicio 2:
 
 1. **Objetivo:**
    - Crear una clase genérica llamada `ParObjetos` que maneje pares de objetos de cualquier tipo.
