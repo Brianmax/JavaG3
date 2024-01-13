@@ -10,7 +10,6 @@ create table if not exists cursos(
 	nombre varchar(20) not null,
 
 	profesor_id_fk integer,
-	constraint profesor_fk
 	foreign key(profesor_id_fk)
 		references profesores(profesor_id)
 		on delete set null
