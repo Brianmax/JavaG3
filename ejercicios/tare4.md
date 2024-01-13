@@ -31,4 +31,4 @@ Desarrollar un sistema bancario básico en Java que incluya las clases Bank, Acc
 
 5. **Entrega:**
    - El nombre del proyecto debe tener el siguiente formato: `nombre_apellido_tarea4` (reemplaza `nombre` y `apellido` con tu nombre y apellido) y enviarlo en comprimido usando el mismo formato `nombre_apellido_tarea4.zip`.
-   - Fecha límite de entrega: `2021/01/20 23:59`.
+   - Fecha límite de entrega: `20/01/2024 23:59`.
