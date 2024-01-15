@@ -1,0 +1,15 @@
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 1', 'Contenido del Post 1', '2023-05-01', 5);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 2', 'Contenido del Post 2', '2023-05-01', 12);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 3', 'Contenido del Post 3', '2023-05-01', 27);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 4', 'Contenido del Post 4', '2023-05-01', 33);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 5', 'Contenido del Post 5', '2023-05-01', 18);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 6', 'Contenido del Post 6', '2023-05-01', 9);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 7', 'Contenido del Post 7', '2023-05-01', 45);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 8', 'Contenido del Post 8', '2023-05-01', 20);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 9', 'Contenido del Post 9', '2023-05-01', 6);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 10', 'Contenido del Post 10', '2023-05-01', 37);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 11', 'Contenido del Post 11', '2023-05-01', 15);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 12', 'Contenido del Post 12', '2023-05-01', 3);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 13', 'Contenido del Post 13', '2023-05-01', 48);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 14', 'Contenido del Post 14', '2023-05-01', 25);
+insert into posts (titulo, contenido, fecha_creacion, usuario_id_fk) values ('Post 15', 'Contenido del Post 15', '2023-05-01', 7);

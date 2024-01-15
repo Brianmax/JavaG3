@@ -1,0 +1,15 @@
+insert into usuarios (username, email, direccion) values ('usuario1', 'usuario1@dominio.com', 'Direccion 1');
+insert into usuarios (username, email, direccion) values ('usuario2', 'usuario2@dominio.com', 'Direccion 2');
+insert into usuarios (username, email, direccion) values ('usuario3', 'usuario3@dominio.com', 'Direccion 3');
+insert into usuarios (username, email, direccion) values ('usuario4', 'usuario4@dominio.com', 'Direccion 4');
+insert into usuarios (username, email, direccion) values ('usuario5', 'usuario5@dominio.com', 'Direccion 5');
+insert into usuarios (username, email, direccion) values ('usuario6', 'usuario6@dominio.com', 'Direccion 6');
+insert into usuarios (username, email, direccion) values ('usuario7', 'usuario7@dominio.com', 'Direccion 7');
+insert into usuarios (username, email, direccion) values ('usuario8', 'usuario8@dominio.com', 'Direccion 8');
+insert into usuarios (username, email, direccion) values ('usuario9', 'usuario9@dominio.com', 'Direccion 9');
+insert into usuarios (username, email, direccion) values ('usuario10', 'usuario10@dominio.com', 'Direccion 10');
+insert into usuarios (username, email, direccion) values ('usuario11', 'usuario11@dominio.com', 'Direccion 11');
+insert into usuarios (username, email, direccion) values ('usuario12', 'usuario12@dominio.com', 'Direccion 12');
+insert into usuarios (username, email, direccion) values ('usuario13', 'usuario13@dominio.com', 'Direccion 13');
+insert into usuarios (username, email, direccion) values ('usuario14', 'usuario14@dominio.com', 'Direccion 14');
+insert into usuarios (username, email, direccion) values ('usuario15', 'usuario15@dominio.com', 'Direccion 15');
