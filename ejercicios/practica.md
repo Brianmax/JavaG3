@@ -30,7 +30,7 @@ d. **Préstamos:**
       - `Fecha_Devolucion_Esperada` (Fecha de devolución esperada, tipo: DATE)
    - Relaciones:
       - Uno a uno con Libros
-      - Uno a uno con Lectores
+      - Muchos a uno con Lectores
 
 e. **Lectores:**
    - Atributos:
@@ -71,7 +71,6 @@ f. **Tablas Intermedias:**
       - Atributos:
          - `Autor_ID` (Clave Foránea Referencia a Autores)
          - `ISBN` (Clave Foránea Referencia a Libros)
-      - Clave Primaria: `(Autor_ID, ISBN)`
       - Relaciones:
          - Muchos a muchos entre Autores y Libros
 
@@ -80,7 +79,6 @@ f. **Tablas Intermedias:**
       - Atributos:
          - `ISBN` (Clave Foránea Referencia a Libros)
          - `Categoria_ID` (Clave Foránea Referencia a Categorías)
-      - Clave Primaria: `(ISBN, Categoria_ID)`
       - Relaciones:
          - Muchos a muchos entre Libros y Categorías
 
