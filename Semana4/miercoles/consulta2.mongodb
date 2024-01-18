@@ -17,6 +17,7 @@ db.universidades.insertOne(
 use("db1")
 db.universidades.find()
 
+use("db1")
 db.universidades.insertMany(
     [
         {
@@ -44,6 +45,7 @@ db.universidades.insertMany(
             presupuesto: 2000000 
         },
         {
+            _id: 1,
             nombre: "UNSA",
             carreras: ["Ing Mecanica", "Ing Electrica", "Relaciones Industriales"],
             alumnos: 9000,
@@ -57,3 +59,6 @@ db.universidades.insertMany(
         }
     ]
 )
+
+use("db1")
+db.universidades.find()
