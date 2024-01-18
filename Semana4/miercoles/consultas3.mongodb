@@ -77,5 +77,18 @@ db.universidades.updateMany(
         }
     }
 )
+
+use("db1")
+db.universidades.updateMany(
+    {
+
+    },
+    {
+        $set:
+        {
+            profesores: 45
+        }
+    }
+)
 use("db1")
 db.universidades.find()
