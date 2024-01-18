@@ -1,0 +1,43 @@
+// crear base de datos
+
+use("db1")
+db.createCollection("users")
+
+
+use("db1")
+db.users.insertOne(
+    {
+        "nombre": "George",
+        "apellido": "Maxi",
+        "edad": 27 
+    }
+)
+
+use("db1")
+db.users.insertMany(
+    [
+        {
+            "nombre": "Jose",
+            "apellido": "Chavez",
+            "edad": 26
+        },
+        {
+            "nombre": "Rafael", 
+            "apellido": "David",
+            "edad": 26,
+            "correo": "rafael@gmail.com"
+        }
+    ]
+)
+
+use("db1")
+db.users.find(
+    // filtro
+    {
+
+    },
+    {
+        nombre: true,
+        apellido: true
+    }
+)
