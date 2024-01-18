@@ -61,4 +61,41 @@ db.universidades.insertMany(
 )
 
 use("db1")
+db.universidades.updateMany(
+    {
+        alumnos:
+        {
+            $lte: 8000
+        }
+    },
+    {
+        $unset:
+        {
+            profesores: 0
+        }
+    }
+)
+
+use("db1")
+db.universidades.find(
+    {
+        "direccion.ciudad": "Lima"
+    },
+    {
+        nombre: true
+    }
+)
+
+use("db1")
+db.universidades.updateMany(
+    {},
+    {
+        $rename:
+        {
+            direccion: "ubicacion"
+        }
+    }
+)
+
+use("db1")
 db.universidades.find()
