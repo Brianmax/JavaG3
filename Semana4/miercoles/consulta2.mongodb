@@ -1,0 +1,59 @@
+use("db1")
+db.universidades.insertOne(
+    {
+        nombre: "UNI",
+        carreras: ["Ing Mecanica", "Ing Electrica", "Ing Industrial"],
+        alumnos: 5000,
+        direccion: {
+            calle: "Av Aviacion",
+            numero: 203,
+            distrito: "Rimac",
+            ciudad: "Lima"
+        },
+        presupuesto: 1000000 
+    }
+)
+
+use("db1")
+db.universidades.find()
+
+db.universidades.insertMany(
+    [
+        {
+            nombre: "UNMSM",
+            carreras: ["Ing Mecanica", "Derecho", "Psicologia"],
+            alumnos: 13000,
+            direccion: {
+                calle: "Av Arequipa",
+                numero: 789,
+                distrito: "Surco",
+                ciudad: "Lima"
+            },
+            presupuesto: 1500000 
+        },
+        {
+            nombre: "PUCP",
+            carreras: ["Ing Mecanica", "Derecho", "Artes"],
+            alumnos: 8000,
+            direccion: {
+                calle: "Av Univesitaria",
+                numero: 678,
+                distrito: "Cercado",
+                ciudad: "Lima"
+            },
+            presupuesto: 2000000 
+        },
+        {
+            nombre: "UNSA",
+            carreras: ["Ing Mecanica", "Ing Electrica", "Relaciones Industriales"],
+            alumnos: 9000,
+            direccion: {
+                calle: "Av Independencia",
+                numero: 399,
+                distrito: "Arequipa",
+                ciudad: "Arequipa"
+            },
+            presupuesto: 1500000
+        }
+    ]
+)
