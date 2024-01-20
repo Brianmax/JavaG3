@@ -92,6 +92,34 @@ db.createCollection("productos",
 })
 
 use("db1")
+db.createCollection("direcciones",
+{
+    validator:{
+        $jsonSchema:
+        {
+            bsonType:'object',
+            properties:
+            {
+                calle:{
+                    bsonType:'string'
+                },
+                n_departamento:
+                {
+                    bsonType: 'string'
+                },
+                distrito:
+                {
+                    bsonType: 'string'
+                },
+                ciudad:{
+                    bsonType:'string'
+                }
+            }
+        }
+    }
+})
+
+use("db1")
 db.comentarios.insertOne(
     {
         contenido:"Muy buen producto"
