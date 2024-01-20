@@ -90,3 +90,26 @@ db.createCollection("productos",
         }
     }
 })
+
+use("db1")
+db.comentarios.insertOne(
+    {
+        contenido:"Muy buen producto"
+    }
+)
+
+// error
+db.comentarios.insertOne(
+    {
+        contenido:1
+    }
+)
+
+use("db1")
+db.productos.insertOne(
+    {
+        nombre_producto: "Latop HP",
+        precio: 1999.99,
+        comentarios:[ObjectId("65ab182fe3615ae104f1d422")]
+    }
+)
