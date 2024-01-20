@@ -47,3 +47,46 @@ db.createCollection("usuarios",
         }
     }
 )
+
+use("db1")
+db.createCollection("comentarios",
+{
+    validator:{
+        $jsonSchema:{
+            bsonType:'object',
+            properties:
+            {
+                contenido:{
+                    bsonType: 'string'
+                }
+            }
+        }
+    }
+})
+
+use("db1")
+db.createCollection("productos",
+{
+    validator:{
+        $jsonSchema:
+        {
+            bsonType: 'object',
+            properties:
+            {
+                nombre_producto:{
+                    bsonType: 'string'
+                },
+                precio:{
+                    bsonType: 'double'
+                },
+                comentarios:
+                {
+                    bsonType: 'array',
+                    items :{
+                        bsonType: 'objectId'
+                    }
+                }
+            }
+        }
+    }
+})
