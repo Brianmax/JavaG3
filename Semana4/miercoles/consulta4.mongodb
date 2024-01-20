@@ -47,3 +47,97 @@ db.createCollection("usuarios",
         }
     }
 )
+
+use("db1")
+db.createCollection("comentarios",
+{
+    validator:{
+        $jsonSchema:{
+            bsonType:'object',
+            properties:
+            {
+                contenido:{
+                    bsonType: 'string'
+                }
+            }
+        }
+    }
+})
+
+use("db1")
+db.createCollection("productos",
+{
+    validator:{
+        $jsonSchema:
+        {
+            bsonType: 'object',
+            properties:
+            {
+                nombre_producto:{
+                    bsonType: 'string'
+                },
+                precio:{
+                    bsonType: 'double'
+                },
+                comentarios:
+                {
+                    bsonType: 'array',
+                    items :{
+                        bsonType: 'objectId'
+                    }
+                }
+            }
+        }
+    }
+})
+
+use("db1")
+db.createCollection("direcciones",
+{
+    validator:{
+        $jsonSchema:
+        {
+            bsonType:'object',
+            properties:
+            {
+                calle:{
+                    bsonType:'string'
+                },
+                n_departamento:
+                {
+                    bsonType: 'string'
+                },
+                distrito:
+                {
+                    bsonType: 'string'
+                },
+                ciudad:{
+                    bsonType:'string'
+                }
+            }
+        }
+    }
+})
+
+use("db1")
+db.comentarios.insertOne(
+    {
+        contenido:"Muy buen producto"
+    }
+)
+
+// error
+db.comentarios.insertOne(
+    {
+        contenido:1
+    }
+)
+
+use("db1")
+db.productos.insertOne(
+    {
+        nombre_producto: "Latop HP",
+        precio: 1999.99,
+        comentarios:[ObjectId("65ab182fe3615ae104f1d422")]
+    }
+)
