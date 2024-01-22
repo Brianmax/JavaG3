@@ -36,4 +36,4 @@ Diseñar una base de datos para un sistema de gestión de cursos y estudiantes. 
 - Agrega registros a la tabla "Inscripciones" para simular inscripciones de estudiantes en cursos.
 
 ## Entrega
-- Crea un archivo llamado `recuperacion.sql` con el código SQL necesario para crear las tablas y agregar los registros.
+- Crea un archivo llamado `recuperacion_nombre_apellido.sql` con el código SQL necesario para crear las tablas y agregar los registros.
