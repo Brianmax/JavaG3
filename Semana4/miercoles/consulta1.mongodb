@@ -34,10 +34,6 @@ use("db1")
 db.users.find(
     // filtro
     {
-
-    },
-    {
-        nombre: true,
-        apellido: true
+        
     }
 )

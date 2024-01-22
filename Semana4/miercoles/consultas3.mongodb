@@ -91,4 +91,8 @@ db.universidades.updateMany(
     }
 )
 use("db1")
-db.universidades.find()
+db.productos.find(
+    {
+        nombre_producto: "Laptop"
+    }
+)

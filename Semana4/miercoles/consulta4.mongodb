@@ -90,7 +90,8 @@ db.createCollection("productos",
         }
     }
 })
-
+use("db1")
+db.productos.createIndex({nombre_producto:1}, {unique: true})
 use("db1")
 db.createCollection("direcciones",
 {
