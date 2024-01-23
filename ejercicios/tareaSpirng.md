@@ -19,7 +19,7 @@
 ## Controlador REST
 
 1. Crea un controlador REST para manejar operaciones CRUD en productos.
-2. Utiliza las anotaciones `@RestController` y `@RequestMapping("/productos")`.
+2. Utiliza la anotacion `@RestController`.
 3. Define el metodo para poder crear un producto.
 
 ## Configuración de la Base de Datos
