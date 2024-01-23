@@ -3,6 +3,7 @@ package org.example.documents;
 import lombok.Getter;
 import lombok.Setter;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import javax.print.Doc;
 import java.util.List;
@@ -10,11 +11,10 @@ import java.util.List;
 @Getter
 @Setter
 public class Producto {
-    String idProducto;
+    ObjectId idProducto;
     String nombreProducto;
     Double precio;
-    List<String> comentarios;
-
+    List<ObjectId> comentarios;
     public Document toDocument()
     {
         Document document = new Document();
@@ -22,5 +22,14 @@ public class Producto {
         document.append("precio", this.precio);
         document.append("comentarios", this.comentarios);
         return document;
+    }
+    public static Producto fromDocument(Document document)
+    {
+        Producto producto = new Producto();
+        producto.setIdProducto(document.getObjectId("_id"));
+        producto.setNombreProducto(document.getString("nombre_producto"));
+        producto.setPrecio(document.getDouble("precio"));
+        producto.setComentarios(document.getList("comentarios", ObjectId.class));
+        return producto;
     }
 }

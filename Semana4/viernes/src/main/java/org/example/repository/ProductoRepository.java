@@ -16,10 +16,15 @@ public class ProductoRepository {
         productoCollection.insertOne(producto.toDocument());
     }
 
-    public Producto findProducto(String nombreProducto)
+    public Producto findProductoByNombre(String nombreProducto)
     {
         Document filter = new Document("nombre_producto", nombreProducto);
         Document productoBD = (Document) productoCollection.find(filter).first();
+        if(productoBD!=null)
+        {
+            return Producto.fromDocument(productoBD);
+        }
+        return new Producto();
     }
 
 }

@@ -16,7 +16,7 @@ public class UsuarioService {
         // logica de negocio
         // vefifcamos que el usuario no exista
         // verficamos que el nombre tenga al menos tres caractarees
-        usuarioRepository.agregarUsuario(usuario);
+        usuarioRepository.save(usuario);
     }
 
     public void validarProductoUsuario(ObjectId id_usuario, ObjectId id_producto)

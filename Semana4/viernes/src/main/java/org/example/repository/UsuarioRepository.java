@@ -14,11 +14,11 @@ public class UsuarioRepository {
     // leer
     // eliminar
     // create, read, update, delete
-    public void agregarUsuario(Usuario usuario)
+    public void save(Usuario usuario)
     {
         usuarioCollection.insertOne(usuario.toDocument());
     }
-    public void agregarProductoUsuario(ObjectId id_usuario, ObjectId id_producto)
+    public Usuario findByNombre(String nombre)
     {
 
     }
