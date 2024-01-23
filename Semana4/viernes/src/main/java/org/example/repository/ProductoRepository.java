@@ -2,7 +2,6 @@ package org.example.repository;
 
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
-import org.bson.types.ObjectId;
 import org.example.documents.Producto;
 
 public class ProductoRepository {
@@ -12,7 +11,7 @@ public class ProductoRepository {
         this.productoCollection = productoCollection;
     }
 
-    public void agregarProducto(Producto producto)
+    public void save(Producto producto)
     {
         productoCollection.insertOne(producto.toDocument());
     }

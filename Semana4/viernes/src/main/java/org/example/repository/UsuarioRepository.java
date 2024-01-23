@@ -9,12 +9,15 @@ public class UsuarioRepository {
     public UsuarioRepository(MongoCollection usuarioCollection){
         this.usuarioCollection = usuarioCollection;
     }
-
+    // guardar
+    // actualizar
+    // leer
+    // eliminar
+    // create, read, update, delete
     public void agregarUsuario(Usuario usuario)
     {
         usuarioCollection.insertOne(usuario.toDocument());
     }
-
     public void agregarProductoUsuario(ObjectId id_usuario, ObjectId id_producto)
     {
 

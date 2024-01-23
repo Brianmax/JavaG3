@@ -12,6 +12,6 @@ public class ProductoService {
     public void agregarProducto(Producto producto)
     {
         // logica de nogocio
-        productoRepository.agregarProducto(producto);
+        productoRepository.save(producto);
     }
 }
