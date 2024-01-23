@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.example.documents.Usuario;
 import org.example.repository.UsuarioRepository;
@@ -13,9 +14,13 @@ public class UsuarioService {
 
     public void agregarUsuario(Usuario usuario)
     {
-        // logica de negocio
-        // vefifcamos que el usuario no exista
-        // verficamos que el nombre tenga al menos tres caractarees
+        // verificamos que el usuario no exista
+        Usuario usuarioBd = usuarioRepository.findByNombre(usuario.getNombre());
+        if(usuarioBd.getNombre()!=null)
+        {
+            System.out.println("El usuario ya existe");
+            return;
+        }
         usuarioRepository.save(usuario);
     }
 
