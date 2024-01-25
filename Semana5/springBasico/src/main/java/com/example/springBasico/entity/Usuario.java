@@ -18,4 +18,5 @@ public class Usuario {
     Integer id;
     String nombre;
     String apellido;
+    // nuevo campo
 }
