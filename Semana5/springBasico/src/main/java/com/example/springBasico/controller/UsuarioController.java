@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -50,5 +51,15 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No existen registros");
         }
         return ResponseEntity.ok(usuarioList);
+    }
+    @GetMapping("usuario/query")
+    public ResponseEntity<?> queryParam(@RequestParam Map<String, String> request)
+    {
+        Optional<Usuario> usuario = usuarioService.buscarUsuarios(request);
+        if(usuario.isPresent())
+        {
+            return ResponseEntity.ok(usuario.get());
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
     }
 }
