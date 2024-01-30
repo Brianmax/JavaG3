@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS estudiantes (
     fecha_modificacion DATE,
     estado BOOLEAN,
     email VARCHAR(255) UNIQUE,
-    apoderado_id_fk INTEGER NOT,
+    apoderado_id_fk INTEGER,
     FOREIGN KEY(apoderado_id_fk) REFERENCES apoderados(apoderado_id) ON DELETE SET NULL
 );
 
