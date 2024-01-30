@@ -1,11 +1,14 @@
 package com.example.relacionesjpa.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,4 +28,7 @@ public class Apoderado {
     @Column(name = "fecha_modificacion")
     private Date fechaModificacion;
     private String email;
+    @OneToMany(mappedBy = "apoderado")
+    @JsonIgnoreProperties("apoderado")
+    List<Estudiante> estudiantes;
 }
