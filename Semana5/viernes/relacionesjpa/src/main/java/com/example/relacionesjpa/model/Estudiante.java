@@ -32,7 +32,6 @@ public class Estudiante {
     @ManyToOne
     @JoinColumn(name = "apoderado_id_fk")
     private Apoderado apoderado;
-
     // relacion muchos a muchos con curso
     @ManyToMany
     @JoinTable(name = "estudiante_curso",
