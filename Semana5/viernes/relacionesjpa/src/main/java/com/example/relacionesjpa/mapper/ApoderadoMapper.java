@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 public interface ApoderadoMapper {
     ApoderadoMapper INSTANCE = Mappers.getMapper(ApoderadoMapper.class);
 
-    @Mapping(source = "id", target = "id")
+    @Mapping(source = "apoderado.id", target = "id")
     @Mapping(source = "nombre", target = "nombre")
     @Mapping(source = "apellido", target = "apellido")
     @Mapping(source = "email", target = "email")

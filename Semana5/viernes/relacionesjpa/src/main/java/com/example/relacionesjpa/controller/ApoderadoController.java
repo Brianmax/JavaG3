@@ -1,6 +1,7 @@
 package com.example.relacionesjpa.controller;
 
 import com.example.relacionesjpa.model.Apoderado;
+import com.example.relacionesjpa.response.ResponseBase;
 import com.example.relacionesjpa.service.ApoderadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,18 +16,12 @@ public class ApoderadoController {
     private ApoderadoService apoderadoService;
 
     @PostMapping("/save")
-    public ResponseEntity<?> saveApoderado(@RequestBody Apoderado apoderado){
-        Apoderado apoderadoGuardado = apoderadoService.saveApoderado(apoderado);
-        return ResponseEntity.ok(apoderadoGuardado);
+    public ResponseBase saveApoderado(@RequestBody Apoderado apoderado){
+        return apoderadoService.saveApoderado(apoderado);
     }
     @GetMapping("/get/{id}")
-    public ResponseEntity<?> findById(@PathVariable Integer id)
+    public ResponseBase findById(@PathVariable Integer id)
     {
-        Optional<Apoderado> apoderadoBd = apoderadoService.findById(id);
-        if(apoderadoBd.isPresent())
-        {
-            return ResponseEntity.ok(apoderadoBd);
-        }
-        return ResponseEntity.notFound().build();
+        return apoderadoService.findById(id);
     }
 }

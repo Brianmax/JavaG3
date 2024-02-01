@@ -36,8 +36,19 @@ public class ApoderadoService {
         ApoderadoDTO apoderadoDTO = ApoderadoMapper.INSTANCE.apoderadoToApoderadoDTO(apoderado);
         return new ResponseBase(201, "Apoderado creado", true, Optional.of(apoderadoDTO));
     }
-    public Optional<Apoderado> findById(Integer id)
+    public ResponseBase findById(Integer id)
     {
-        return apoderadoRepository.findById(id);
+        // buscamos el apoderado
+        Optional<Apoderado> apoderadoBd = apoderadoRepository.findById(id);
+        if(apoderadoBd.isPresent())
+        {
+            Apoderado apoderadoEntity = apoderadoBd.get();
+            ApoderadoDTO apoderadoDTO = ApoderadoMapper.INSTANCE.apoderadoToApoderadoDTO(apoderadoEntity);
+            return new ResponseBase(200,
+                    "Apoderado encontrado",
+                    true,
+                    Optional.of(apoderadoDTO));
+        }
+        return new ResponseBase(404, "Apoderado no existe", false, Optional.empty());
     }
 }
