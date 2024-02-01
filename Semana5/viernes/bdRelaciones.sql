@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS cursos (
 );
 
 CREATE TABLE estudiante_curso (
+    estudiante_curso_id PRIMARY KEY,
     estudiante_id_fk INTEGER,
     curso_id_fk INTEGER,
     FOREIGN KEY (estudiante_id_fk) REFERENCES estudiantes(estudiante_id) ON DELETE CASCADE,
