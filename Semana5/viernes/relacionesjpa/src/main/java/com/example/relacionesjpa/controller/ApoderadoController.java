@@ -22,6 +22,7 @@ public class ApoderadoController {
     @GetMapping("/get/{id}")
     public ResponseBase findById(@PathVariable Integer id)
     {
-        return apoderadoService.findById(id);
+        ResponseBase responseBase = apoderadoService.findById(id);
+        return responseBase;
     }
 }

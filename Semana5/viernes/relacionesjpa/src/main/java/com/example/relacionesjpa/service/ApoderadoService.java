@@ -2,6 +2,7 @@ package com.example.relacionesjpa.service;
 
 import com.example.relacionesjpa.dto.ApoderadoDTO;
 import com.example.relacionesjpa.mapper.ApoderadoMapper;
+import com.example.relacionesjpa.mapper.CycleAvoidingMappingContext;
 import com.example.relacionesjpa.model.Apoderado;
 import com.example.relacionesjpa.repository.ApoderadoRepository;
 import com.example.relacionesjpa.response.ResponseBase;
@@ -15,6 +16,8 @@ import java.util.Optional;
 @Service
 public class ApoderadoService {
     private ApoderadoRepository apoderadoRepository;
+    @Autowired
+    private CycleAvoidingMappingContext cycleAvoidingMappingContext;
     public ApoderadoService(ApoderadoRepository apoderadoRepository)
     {
         this.apoderadoRepository = apoderadoRepository;
@@ -33,7 +36,7 @@ public class ApoderadoService {
         apoderado.setFechaCreacion(new Date());
         apoderado.setRole("ROLE_APODERADO");
         apoderadoRepository.save(apoderado);
-        ApoderadoDTO apoderadoDTO = ApoderadoMapper.INSTANCE.apoderadoToApoderadoDTO(apoderado);
+        ApoderadoDTO apoderadoDTO = ApoderadoMapper.INSTANCE.apoderadoToApoderadoDTO(apoderado, cycleAvoidingMappingContext);
         return new ResponseBase(201, "Apoderado creado", true, Optional.of(apoderadoDTO));
     }
     public ResponseBase findById(Integer id)
@@ -43,7 +46,7 @@ public class ApoderadoService {
         if(apoderadoBd.isPresent())
         {
             Apoderado apoderadoEntity = apoderadoBd.get();
-            ApoderadoDTO apoderadoDTO = ApoderadoMapper.INSTANCE.apoderadoToApoderadoDTO(apoderadoEntity);
+            ApoderadoDTO apoderadoDTO = ApoderadoMapper.INSTANCE.apoderadoToApoderadoDTO(apoderadoEntity, cycleAvoidingMappingContext);
             return new ResponseBase(200,
                     "Apoderado encontrado",
                     true,

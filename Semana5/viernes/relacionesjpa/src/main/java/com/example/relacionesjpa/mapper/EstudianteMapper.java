@@ -2,6 +2,7 @@ package com.example.relacionesjpa.mapper;
 
 import com.example.relacionesjpa.dto.EstudianteDTO;
 import com.example.relacionesjpa.model.Estudiante;
+import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -14,5 +15,5 @@ public interface EstudianteMapper {
     @Mapping(source = "apellido", target = "apellidoEstudiante")
     @Mapping(source = "email", target = "emailEstudiante")
     @Mapping(source = "apoderado", target = "apoderadoDTO")
-    EstudianteDTO estudianteToEstudianteDTO(Estudiante estudiante);
+    EstudianteDTO estudianteToEstudianteDTO(Estudiante estudiante, @Context CycleAvoidingMappingContext c);
 }

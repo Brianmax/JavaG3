@@ -2,6 +2,7 @@ package com.example.relacionesjpa.mapper;
 
 import com.example.relacionesjpa.dto.ApoderadoDTO;
 import com.example.relacionesjpa.model.Apoderado;
+import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -15,5 +16,5 @@ public interface ApoderadoMapper {
     @Mapping(source = "apellido", target = "apellido")
     @Mapping(source = "email", target = "email")
     @Mapping(source = "estudiantes", target = "estudiantes")
-    ApoderadoDTO apoderadoToApoderadoDTO(Apoderado apoderado);
+    ApoderadoDTO apoderadoToApoderadoDTO(Apoderado apoderado, @Context CycleAvoidingMappingContext c);
 }
