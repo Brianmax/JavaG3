@@ -1,44 +1,54 @@
-CREATE TABLE Autores (
-    autor_id SERIAL PRIMARY KEY,
-    nombre VARCHAR(255) UNIQUE,
-    nacionalidad VARCHAR(255)
+CREATE TABLE aerolinea (
+    aerolinea_id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    estado BOOLEAN
 );
 
-CREATE TABLE Editoriales (
-    editorial_id SERIAL PRIMARY KEY,
-    nombre VARCHAR(255) UNIQUE,
-    pais VARCHAR(255)
+CREATE TABLE avion (
+    avion_id SERIAL PRIMARY KEY,
+    modelo VARCHAR(255),
+    capacidad_pasajeros INT,
+    aerolinea_id_fk INT,
+    estado BOOLEAN,
+    FOREIGN KEY (aerolinea_id_fk) REFERENCES aerolinea(aerolinea_id)
 );
 
-CREATE TABLE Libros (
-    isbn VARCHAR(255) PRIMARY KEY,
-    titulo VARCHAR(255),
-    anio_publicacion INT,
-    precio DECIMAL,
-    editorial_id_fk INT REFERENCES Editoriales(editorial_id)
+CREATE TABLE vuelo (
+    vuelo_id SERIAL PRIMARY KEY,
+    avion_id_fk INT,
+    fecha_salida DATE,
+    fecha_llegada DATE,
+    estado BOOLEAN,
+    FOREIGN KEY (avion_id_fk) REFERENCES avion(avion_id)
 );
 
-CREATE TABLE Libros_Autores (
-    isbn VARCHAR(255),
-    autor_id_fk INTEGER,
-    FOREIGN KEY (autor_id_fk) REFERENCES Autores(autor_id),
-    FOREIGN KEY (isbn) REFERENCES Libros(isbn)
+CREATE TABLE piloto (
+    piloto_id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    estado BOOLEAN
 );
 
-CREATE TABLE Categorias (
-    categoria_id SERIAL PRIMARY KEY,
-    nombre VARCHAR(255) UNIQUE
+CREATE TABLE piloto_vuelo (
+    piloto_id_fk INT,
+    vuelo_id_fk INT,
+    FOREIGN KEY (piloto_id_fk) REFERENCES piloto(piloto_id),
+    FOREIGN KEY (vuelo_id_fk) REFERENCES vuelo(vuelo_id)
 );
 
-CREATE TABLE Libros_Categorias (
-    isbn VARCHAR(255),
-    categoria_id_fk INTEGER REFERENCES Categorias(categoria_id),
-    FOREIGN KEY (isbn) REFERENCES Libros(isbn)
+CREATE TABLE pasajero (
+    pasajero_id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    estado BOOLEAN
 );
 
-CREATE TABLE Comentarios (
-    comentario_id SERIAL PRIMARY KEY,
-    contenido VARCHAR(255),
-    isbn VARCHAR(255),
-    FOREIGN KEY (isbn) REFERENCES Libros(isbn)
+CREATE TABLE reserva (
+    reserva_id SERIAL PRIMARY KEY,
+    vuelo_id_fk INT,
+    pasajero_id_fk INT,
+    asiento_numero INT,
+    estado INT,
+    FOREIGN KEY (vuelo_id_fk) REFERENCES vuelo(vuelo_id),
+    FOREIGN KEY (pasajero_id_fk) REFERENCES pasajero(pasajero_id)
 );
