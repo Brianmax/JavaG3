@@ -17,6 +17,8 @@ public class Autor {
     private Integer id;
     private String nombre;
     private String nacionalidad;
+    private String dni;
+    private String correo;
 
     @ManyToMany
     @JoinTable(
