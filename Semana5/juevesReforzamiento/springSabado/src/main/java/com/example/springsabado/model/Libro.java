@@ -6,11 +6,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Table(name = "libro")
 @Entity
-@Table(name = "propiedad")
-public class Propiedad {
+public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private direccion
+    private String titulo;
+    private Integer estado;
 }
