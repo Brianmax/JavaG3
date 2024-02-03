@@ -18,6 +18,6 @@ public class Editorial {
     private String nombre;
     private String pais;
 
-    @OneToMany(mappedBy = "editorial")
-    private List<Libro> libros;
+    @OneToMany
+    List<Libro> libros;
 }

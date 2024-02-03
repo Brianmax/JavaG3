@@ -19,7 +19,6 @@ public class Autor {
     private String nacionalidad;
     private String dni;
     private String correo;
-
     @ManyToMany
     @JoinTable(
             name = "libros_autores",

@@ -11,6 +11,5 @@ import java.util.Optional;
 
 @Repository
 public interface AutorRepository extends JpaRepository<Autor, Integer> {
-    Optional<Autor> findByNombre(String nombre);
     Optional<Autor> findByDni(String dni);
 }

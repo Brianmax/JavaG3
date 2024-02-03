@@ -20,12 +20,9 @@ public class Libro {
     @ManyToOne
     @JoinColumn(name = "editorial_id_fk")
     private Editorial editorial;
-
     @ManyToMany(mappedBy = "libros")
     private List<Autor> autors;
-
     // relacion libros con comentarios
-
     @OneToMany(mappedBy = "libro")
     private List<Comentario> comentarios;
 }
