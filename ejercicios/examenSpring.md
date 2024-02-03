@@ -1,61 +1,60 @@
-# Examen Spring ## Base de datos (Codigo)
+# Examen Spring 
+## Base de datos (Codigo)
 ```sql
--- Tabla `aerolinea`:
 CREATE TABLE aerolinea (
-    aerolinea_id SERIAL PRIMARY KEY,  -- Identificador único para cada aerolínea
-    nombre VARCHAR(255),              -- Nombre de la aerolínea
-    estado BOOLEAN                     -- Estado actual de la aerolínea (activo/inactivo)
+    aerolinea_id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    estado BOOLEAN
 );
 
--- Tabla `avion`:
 CREATE TABLE avion (
-    avion_id SERIAL PRIMARY KEY,      -- Identificador único para cada avión
-    modelo VARCHAR(255),               -- Modelo del avión
-    capacidad_pasajeros INT,           -- Número de pasajeros que puede transportar el avión
-    aerolinea_id_fk INT,               -- Clave foránea que se relaciona con aerolinea(aerolinea_id)
-    estado BOOLEAN                      -- Estado actual del avión (activo/inactivo)
+    avion_id SERIAL PRIMARY KEY,
+    modelo VARCHAR(255),
+    capacidad_pasajeros INT,
+    aerolinea_id_fk INT,
+    estado BOOLEAN,
+    FOREIGN KEY (aerolinea_id_fk) REFERENCES aerolinea(aerolinea_id)
 );
 
--- Tabla `vuelo`:
 CREATE TABLE vuelo (
-    vuelo_id SERIAL PRIMARY KEY,       -- Identificador único para cada vuelo
-    avion_id_fk INT,                   -- Clave foránea que se relaciona con avion(avion_id)
-    fecha_salida DATE,                 -- Fecha de salida del vuelo
-    fecha_llegada DATE,                -- Fecha de llegada del vuelo
-    estado BOOLEAN                      -- Estado actual del vuelo (activo/inactivo)
+    vuelo_id SERIAL PRIMARY KEY,
+    avion_id_fk INT,
+    fecha_salida DATE,
+    fecha_llegada DATE,
+    estado BOOLEAN,
+    FOREIGN KEY (avion_id_fk) REFERENCES avion(avion_id)
 );
 
--- Tabla `piloto`:
 CREATE TABLE piloto (
-    piloto_id SERIAL PRIMARY KEY,      -- Identificador único para cada piloto
-    nombre VARCHAR(255),               -- Nombre del piloto
-    apellido VARCHAR(255),             -- Apellido del piloto
-    estado BOOLEAN                      -- Estado actual del piloto (activo/inactivo)
+    piloto_id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    estado BOOLEAN
 );
 
--- Tabla `piloto_vuelo`:
 CREATE TABLE piloto_vuelo (
-    piloto_id_fk INT,                  -- Clave foránea que se relaciona con piloto(piloto_id)
-    vuelo_id_fk INT                    -- Clave foránea que se relaciona con vuelo(vuelo_id)
+    piloto_id_fk INT,
+    vuelo_id_fk INT,
+    FOREIGN KEY (piloto_id_fk) REFERENCES piloto(piloto_id),
+    FOREIGN KEY (vuelo_id_fk) REFERENCES vuelo(vuelo_id)
 );
 
--- Tabla `pasajero`:
 CREATE TABLE pasajero (
-    pasajero_id SERIAL PRIMARY KEY,    -- Identificador único para cada pasajero
-    nombre VARCHAR(255),               -- Nombre del pasajero
-    apellido VARCHAR(255),             -- Apellido del pasajero
-    estado BOOLEAN                      -- Estado actual del pasajero (activo/inactivo)
+    pasajero_id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    estado BOOLEAN
 );
 
--- Tabla `reserva`:
 CREATE TABLE reserva (
-    reserva_id SERIAL PRIMARY KEY,     -- Identificador único para cada reserva
-    vuelo_id_fk INT,                   -- Clave foránea que se relaciona con vuelo(vuelo_id)
-    pasajero_id_fk INT,                -- Clave foránea que se relaciona con pasajero(pasajero_id)
-    asiento_numero INT,                -- Número de asiento reservado
-    estado BOOLEAN                      -- Estado actual de la reserva (activo/inactivo)
+    reserva_id SERIAL PRIMARY KEY,
+    vuelo_id_fk INT,
+    pasajero_id_fk INT,
+    asiento_numero INT,
+    estado BOOLEAN,
+    FOREIGN KEY (vuelo_id_fk) REFERENCES vuelo(vuelo_id),
+    FOREIGN KEY (pasajero_id_fk) REFERENCES pasajero(pasajero_id)
 );
-
 ```
 ## ERD
 ![ERD](erd.png)
