@@ -242,3 +242,5 @@ CREATE TABLE reserva (
     }
 }
 ```
+## Entrega
+El nombre del proyecto debe tener el siguiente formato: `nombre_apellido_spring` (reemplaza `nombre` y `apellido` con tu nombre y apellido) y enviarlo en comprimido usando el mismo formato `nombre_apellido_spring.zip`.
