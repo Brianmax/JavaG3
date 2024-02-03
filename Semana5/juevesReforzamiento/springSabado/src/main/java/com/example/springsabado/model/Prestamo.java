@@ -1,9 +1,6 @@
 package com.example.springsabado.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +11,7 @@ import java.util.Date;
 @Table(name = "prestamo")
 @Entity
 public class Prestamo {
-    @Id
+    @EmbeddedId
     PrestamoId prestamoId;
     @Column(name = "fecha_prestamo")
     private Date fechaPrestamo;
