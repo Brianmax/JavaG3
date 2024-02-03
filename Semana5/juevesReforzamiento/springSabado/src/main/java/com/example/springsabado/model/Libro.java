@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+import java.util.Set;
+
 @Getter
 @Setter
 @Table(name = "libro")
@@ -14,4 +17,11 @@ public class Libro {
     private Integer id;
     private String titulo;
     private Integer estado;
+    @ManyToMany
+    @JoinTable(
+            name = "libro_autor",
+            joinColumns = @JoinColumn(name = "libro_id"),
+            inverseJoinColumns = @JoinColumn(name = "autor_id")
+    )
+    Set<Autor> autors;
 }
