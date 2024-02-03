@@ -39,4 +39,8 @@ public class LibroService {
         }
         return new ResponseBase(400, "Autor o libro no existen", true, Optional.empty());
     }
+    public ResponseBase buscarPorId(Integer id)
+    {
+        return new ResponseBase(201, "encontrado", true,libroRepository.findById(id));
+    }
 }

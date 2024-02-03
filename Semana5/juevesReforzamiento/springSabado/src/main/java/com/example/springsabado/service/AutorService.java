@@ -23,4 +23,10 @@ public class AutorService {
         Autor autorGuardado = autorRepository.save(autor);
         return new ResponseBase(201, "Autor creado con exito", true, Optional.of(autorGuardado));
     }
+    public ResponseBase buscarPorId(Integer id)
+    {
+        Optional<Autor> autorBd = autorRepository.findById(id);
+        return new ResponseBase(201, "encontrado", true
+        , Optional.of(autorBd.get()));
+    }
 }
