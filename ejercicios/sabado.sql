@@ -1,44 +1,53 @@
-CREATE TABLE Cliente (
-    ID_Cliente SERIAL PRIMARY KEY,
-    Nombre VARCHAR(255),
-    Direccion VARCHAR(255),
-    Telefono VARCHAR(15),
-    Correo VARCHAR(255)
+CREATE TABLE categoria (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+	estado INT
 );
 
-CREATE TABLE Propiedad (
-    ID_Propiedad SERIAL PRIMARY KEY,
-    Direccion VARCHAR(255),
-    TipoPropiedad VARCHAR(50),
-    NumHabitaciones INTEGER,
-    PrecioAlquiler DECIMAL(10, 2)
+CREATE TABLE autor (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+	estado INT
 );
 
-CREATE TABLE Departamento (
-    ID_Departamento SERIAL PRIMARY KEY,
-    Numero INTEGER,
-    ID_Propiedad INTEGER REFERENCES Propiedad(ID_Propiedad),
-    ID_Arrendatario INTEGER REFERENCES Cliente(ID_Cliente)
+CREATE TABLE editor (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+	estado INT
 );
 
-CREATE TABLE Contrato (
-    ID_Contrato SERIAL PRIMARY KEY,
-    FechaInicio DATE,
-    FechaFin DATE,
-    PrecioAlquiler DECIMAL(10, 2),
-    EstadoContrato VARCHAR(50),
-    ID_Departamento INTEGER REFERENCES Departamento(ID_Departamento)
+CREATE TABLE libro (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255),
+    editor_id INT,
+	estado INT,
+    FOREIGN KEY (editor_id) REFERENCES editor(id)
 );
 
-CREATE TABLE Pago (
-    ID_Pago SERIAL PRIMARY KEY,
-    FechaPago DATE,
-    Monto DECIMAL(10, 2),
-    MetodoPago VARCHAR(50)
+CREATE TABLE libro_categoria (
+    libro_id INT,
+    categoria_id INT,
+    FOREIGN KEY (libro_id) REFERENCES libro(id),
+    FOREIGN KEY (categoria_id) REFERENCES categoria(id)
 );
-
-CREATE TABLE Contrato_Pago (
-    ID_Contrato INTEGER REFERENCES Contrato(ID_Contrato),
-    ID_Pago INTEGER REFERENCES Pago(ID_Pago),
-    PRIMARY KEY (ID_Contrato, ID_Pago)
+CREATE TABLE libro_autor (
+    libro_id INT,
+    autor_id INT,
+    PRIMARY KEY (libro_id, autor_id),
+    FOREIGN KEY (libro_id) REFERENCES libro(id),
+    FOREIGN KEY (autor_id) REFERENCES autor(id)
+);
+CREATE TABLE usuario(
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    estado INT
+);
+CREATE TABLE prestamo(
+    usuario_id INT,
+    libro_id INT,
+    fecha_prestamo DATE,
+    fecha_devolucion DATE,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id),
+    FOREIGN KEY (libro_id) REFERENCES libro(id),
+    PRIMARY KEY (usuario_id, libro_id)
 );
