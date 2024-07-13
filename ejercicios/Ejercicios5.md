@@ -14,8 +14,8 @@ El objetivo de este ejercicio es implementar un sistema que maneje diferentes fo
 
 ### `Forma2D` (Clase Abstracta)
 - **Descripción**: Clase abstracta que implementa `FormaGeometrica` y proporciona implementación básica para calcular el perímetro de formas 2D.
-- **Métodos**:
-    - `calcularPerimetro()`: Implementación por defecto del cálculo del perímetro.
+- **Atributos**:
+    - `color`
 
 ### `Circulo` (Implementa `FormaGeometrica`)
 - **Descripción**: Representa un círculo y proporciona métodos para calcular su área y perímetro.
